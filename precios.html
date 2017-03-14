@@ -4,15 +4,19 @@
     <title>Precios de tus mejores guitarras!!</title>
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.4/blazy.min.js"></script>
     <link rel="stylesheet" href="css/invie.css"/>
+
   </head>
-  <body>
+  <body class="precios">
     <header id="header" class="header background"> <!-- header -->
       <div class="contenedor">
         <figure class="logotipo"> <!-- logotipo -->
           <img src="images/invie.png" width="186" height="60" alt="Invie logotipo"/>
         </figure>
-        <nav class="menu"> <!-- menu -->
+        <span class="burger-button  icon-menu" id="burguer-button"></span>
+        <nav class="menu" id="menu"> <!-- menu -->
           <ul>
             <li>
               <a href="index.html">Home</a>
@@ -35,6 +39,9 @@
               <th>Modelo</th>
               <th>Precio</th>
               <th>Descripción</th>
+              <th>Modelo</th>
+              <th>Precio</th>
+              <th>Descripción</th>
             </tr>
           </thead>
           <tbody>
@@ -42,13 +49,22 @@
               <td>Invie classic</td>
               <td>$100000</td>
               <td>Una guitarra muy pro</td>
-            </tr>
-            <tr>
               <td>Invie classic</td>
               <td>$100000</td>
               <td>Una guitarra muy pro</td>
             </tr>
             <tr>
+              <td>Invie classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+              <td>Invie classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
+            </tr>
+            <tr>
+              <td>Invie classic</td>
+              <td>$100000</td>
+              <td>Una guitarra muy pro</td>
               <td>Invie classic</td>
               <td>$100000</td>
               <td>Una guitarra muy pro</td>
@@ -101,5 +117,33 @@
         </form>
       </div>
     </footer>
+    <script>
+      var consulta=window.matchMedia('(max-width:500px)');
+      consulta.addListener(mediaQuery);
+
+      var $burgerButton=document.getElementById('burger-button');
+      var $menu=document.getElementById('menu');
+
+      function toggleMenu(){
+       $menu.classList.toggle('active');
+      }
+
+      function mediaQuery(){
+        if(consulta.matches){
+          console.log("si se cumplio");
+          //$burgerButton.addEventListener('touchstart',toggleMenu);
+        }else{
+          console.log("no se cumplio");
+          //$burgerButton.removeEventListener('touchstart',toggleMenu);
+        }
+      }
+      mediaQuery();
+
+      //lazy loading
+      var bLazy = new Blazy({
+          selector: 'img'
+      });
+
+    </script>
   </body>
 </html>
